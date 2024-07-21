@@ -9,14 +9,15 @@ export const BackButton = ({
   const handleBack = () => {
     onBack(null); // null indicates return to the landing page
   };
+
   return (
-    <div className="w-full  mb-4 flex items-center justify-center">
+    <div className="w-full mb-4 flex items-center justify-center">
       <button
         onClick={handleBack}
-        className="flex items-center text-green-500 hover:text-green-400 transition-colors duration-200"
+        className="group flex items-center px-4 py-2 text-green-500 bg-slate-800 rounded-full hover:bg-green-500 hover:text-slate-800 transition-all duration-300 shadow-md hover:shadow-green-500/50"
       >
-        <FaArrowLeft className="mr-2" />
-        Back to Landing Page
+        <FaArrowLeft className="mr-2 transform group-hover:-translate-x-1 transition-transform duration-300" />
+        <span className="font-semibold">Back to Landing Page</span>
       </button>
     </div>
   );
