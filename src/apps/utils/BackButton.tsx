@@ -10,7 +10,7 @@ export const BackButton = ({
     onBack(null); // null indicates return to the landing page
   };
   return (
-    <div className="w-full max-w-md mb-4">
+    <div className="w-full  mb-4 flex items-center justify-center">
       <button
         onClick={handleBack}
         className="flex items-center text-green-500 hover:text-green-400 transition-colors duration-200"
