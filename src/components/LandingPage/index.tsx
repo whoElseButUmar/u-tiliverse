@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoIosCode } from "@react-icons/all-files/io/IoIosCode";
 import { AppId } from "../../types/app";
 import { AppCard } from "./components/AppCard";
@@ -8,6 +8,14 @@ type LandingPageProps = {
 };
 
 export const LandingPage = ({ onAppSelect }: LandingPageProps) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredApps = apps.filter(
+    (app) =>
+      app.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      app.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="min-h-screen flex flex-col gap-12 bg-slate-900 text-white font-mono">
       <header className="bg-slate-800 py-6 px-4 gap-8 flex items-center">
@@ -24,9 +32,19 @@ export const LandingPage = ({ onAppSelect }: LandingPageProps) => {
         </div>
       </header>
 
-      <main className=" grow px-12 flex flex-col gap-4 ">
-        <div className="flex flex-wrap gap-6 ">
-          {apps.map((app) => (
+      <main className="grow px-12 flex flex-col gap-4">
+        <div className="mb-6">
+          <input
+            type="text"
+            placeholder="Search apps..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full p-2 bg-slate-700 text-white border border-slate-600 rounded-md focus:outline-none focus:border-green-500"
+          />
+        </div>
+
+        <div className="flex flex-wrap gap-6">
+          {filteredApps.map((app) => (
             <div key={app.id} className="w-full sm:w-1/2 lg:w-1/4">
               <AppCard
                 title={app.title}
@@ -37,10 +55,16 @@ export const LandingPage = ({ onAppSelect }: LandingPageProps) => {
             </div>
           ))}
         </div>
+
+        {filteredApps.length === 0 && (
+          <p className="text-center text-slate-400">
+            No apps found matching your search.
+          </p>
+        )}
       </main>
 
       <footer className="bg-slate-800 py-6">
-        <div className=" grow  text-center">
+        <div className="grow text-center">
           <p>&copy; 2024 u-tiliverse. All rights reserved.</p>
         </div>
       </footer>
@@ -60,4 +84,5 @@ const apps: Array<{
     icon: <IoIosCode className="w-8 h-8 text-green-500" aria-hidden="true" />,
     id: "missioncodec",
   },
+  // Add more apps here as needed
 ];
