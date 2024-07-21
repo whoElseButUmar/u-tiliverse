@@ -60,7 +60,7 @@ export const MissionForm: React.FC<MissionFormProps> = ({
       value={formData.endTime}
       onChange={handleInputChange}
     />
-    <input
+    <textarea
       className="w-full p-2  border rounded bg-slate-700 text-white"
       placeholder="Commit Link"
       name="commitLink"

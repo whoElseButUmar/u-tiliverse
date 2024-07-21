@@ -55,38 +55,38 @@ export const MissionCard: React.FC<MissionCardProps> = ({
           </div>
           <div className="bg-slate-700 p-4 rounded-lg flex flex-col items-start">
             <h4 className="text-green-500 font-bold">Brief:</h4>
-            <p className="text-white text-base">{brief}</p>
+            <p className="text-white text-base break-all">{brief}</p>
           </div>
         </div>
 
         <div className="flex flex-col items-start gap-3">
-          <div className="flex items-center gap-3 ">
+          <div className="flex items-center gap-3  h-9">
             <FaRegClock className="w-5 h-5 text-green-500 " />
             <div className="flex items-center gap-1">
               <span className="text-white font-bold">Started:</span>
-              <span className=" bg-slate-900 px-2 py-1 rounded-md">
-                {startTime}
+              <span className=" bg-slate-900  px-2 py-1 rounded-md">
+                {startTime ? startTime : "TBA"}
               </span>
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 h-9">
             <FaRegCheckCircle className="w-5 h-5 text-green-500 " />
             <div className="flex items-center gap-1">
               <span className="text-white font-bold">Ended:</span>
-              <span className=" bg-slate-900 px-2 py-1 rounded-md">
-                {endTime}
+              <span className=" bg-slate-900  px-2 py-1 rounded-md">
+                {endTime ? endTime : "TBA"}
               </span>
             </div>
           </div>
-          <div className="flex items-start gap-3 w-full">
+          <div className="flex items-start gap-3 w-full h-9">
             <FaGithub className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
             <a
               href={commitLink}
-              className="text-blue-400 underline break-all bg-slate-900 px-2 py-1 rounded-md"
+              className="text-blue-400 underline break-all  bg-slate-900 px-2 py-1 rounded-md"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {commitLink}
+              {commitLink ? commitLink : "TBA"}
             </a>
           </div>
         </div>
