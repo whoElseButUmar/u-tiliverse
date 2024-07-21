@@ -20,7 +20,7 @@
   
   <!-- Stylized 'U' shape -->
   <path d="M60 70 L60 130 Q100 160 140 130 L140 70" 
-        stroke="#00ff00" stroke-width="8" fill="none" stroke-linejoin="round" />
+        stroke="#00ff00" stroke-width="8" fill="none" stroke-linejoin="round" stroke-linecap="round" />
   
   <!-- Code symbol -->
   <text x="74" y="115" font-family="monospace" font-size="30" fill="#00ff00">&lt;/&gt;</text>
