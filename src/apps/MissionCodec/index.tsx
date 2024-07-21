@@ -4,7 +4,7 @@ import { MissionForm } from "./components/MissionForm";
 import { MissionCard } from "./components/MissionCard";
 import { AppId } from "../../types/app";
 import { BackButton } from "../utils/BackButton";
-import { FaLongArrowAltRight } from "@react-icons/all-files/fa/FaLongArrowAltRight";
+import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 interface MissionCodecProps {
   onBack: (returnTo: AppId | null) => void;
 }
@@ -21,7 +21,7 @@ const MissionCodec: React.FC<MissionCodecProps> = ({ onBack }) => {
           handleInputChange={handleInputChange}
         />
         <div className="h-96 flex items-center justify-center ">
-          <FaLongArrowAltRight
+          <IoIosArrowForward
             className="size-16 text-green-500"
             aria-hidden="true"
           />

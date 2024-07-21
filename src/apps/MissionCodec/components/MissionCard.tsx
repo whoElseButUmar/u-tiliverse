@@ -21,7 +21,7 @@ export const MissionCard: React.FC<MissionCardProps> = ({
   endTime,
   commitLink,
 }) => (
-  <div className="w-96 min-h-96 h-auto bg-slate-800 border-4 gap-6 p-6 flex flex-col justify-between border-green-500 rounded-xl shadow-xl ">
+  <div className="w-[40rem] min-h-96 h-auto bg-slate-800 border-4 gap-6 p-6 flex flex-col justify-between border-green-500 rounded-xl shadow-xl ">
     <div className=" h-full flex flex-col gap-6 ">
       <div className="flex flex-col gap-3 tracking-widest">
         <h3 className="text-3xl font-bold text-green-500">
