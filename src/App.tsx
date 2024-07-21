@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { LandingPage } from "./components/LandingPage";
 import MissionCodec from "./apps/MissionCodec";
 import { AppId } from "./types/app";
+import UnderDevelopment from "./components/UnderDevelopment";
 
 const App: React.FC = () => {
   const [currentApp, setCurrentApp] = useState<AppId | null>(null);
@@ -42,9 +43,7 @@ const App: React.FC = () => {
       ) : currentApp === "missioncodec" ? (
         <MissionCodec onBack={handleNavigate} />
       ) : (
-        <div className="flex items-center justify-center h-screen">
-          <p className="text-2xl">App {currentApp} is under development</p>
-        </div>
+        <UnderDevelopment appName={currentApp} onBack={handleNavigate} />
       )}
 
       {deferredPrompt && (

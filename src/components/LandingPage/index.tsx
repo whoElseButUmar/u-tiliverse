@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { IoIosCode } from "@react-icons/all-files/io/IoIosCode";
+import { MdInfoOutline } from "@react-icons/all-files/md/MdInfoOutline";
 import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
+
 import { AppId } from "../../types/app";
 import { AppCard } from "./components/AppCard";
 import { motion } from "framer-motion";
@@ -80,6 +82,8 @@ export const LandingPage = ({ onAppSelect }: LandingPageProps) => {
                 description={app.description}
                 icon={app.icon}
                 onClick={() => onAppSelect(app.id)}
+                accentColor={app.accentColor}
+                comingSoon={app.comingSoon}
               />
             </motion.div>
           ))}
@@ -121,12 +125,24 @@ const apps: Array<{
   title: string;
   description: string;
   icon: React.ReactNode;
+  accentColor: string;
   id: AppId;
+  comingSoon?: boolean;
 }> = [
   {
     title: "MissionCodec",
     description: "Create dev mission cards to log your progress with ease",
-    icon: <IoIosCode className="w-8 h-8 text-green-400" aria-hidden="true" />,
+    icon: <IoIosCode className="w-8 h-8" aria-hidden="true" />,
     id: "missioncodec",
+    accentColor: "green",
+    comingSoon: false,
+  },
+  {
+    title: "New Utility",
+    description: "Exciting new feature coming to uTiliverse soon!",
+    icon: <MdInfoOutline className="w-8 h-8" aria-hidden="true" />,
+    id: "newUtility",
+    accentColor: "yellow",
+    comingSoon: true,
   },
 ];
