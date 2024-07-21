@@ -26,7 +26,7 @@ export const AppCard: React.FC<AppCardProps> = ({
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.3 }}
     onClick={onClick}
-    className={`bg-slate-800 border-l-8 border-l-${accentColor}-400 p-6 rounded-lg shadow-lg cursor-pointer flex flex-col gap-3 group relative`}
+    className={`bg-slate-800 border-l-8 border-l-${accentColor}-400 p-6 min-h-[9rem] rounded-lg shadow-lg cursor-pointer flex flex-col gap-3 group relative`}
   >
     <motion.div
       className="flex items-center gap-3"

@@ -1,6 +1,1 @@
-export type AppId =
-  | "missioncodec"
-  | "taskforge"
-  | "devbrew"
-  | "codesprint"
-  | "newUtility";
+export type AppId = "missioncodec" | "newUtility";

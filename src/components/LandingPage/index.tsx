@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { IoIosCode } from "@react-icons/all-files/io/IoIosCode";
 import { MdInfoOutline } from "@react-icons/all-files/md/MdInfoOutline";
 import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
-
 import { AppId } from "../../types/app";
 import { AppCard } from "./components/AppCard";
 import { motion } from "framer-motion";
@@ -135,7 +134,6 @@ const apps: Array<{
     icon: <IoIosCode className="w-8 h-8" aria-hidden="true" />,
     id: "missioncodec",
     accentColor: "green",
-    comingSoon: false,
   },
   {
     title: "New Utility",
