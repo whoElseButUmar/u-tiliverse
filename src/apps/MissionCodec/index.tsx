@@ -17,7 +17,7 @@ const MissionCodec: React.FC<MissionCodecProps> = ({ onBack }) => {
   };
 
   return (
-    <div className="flex flex-col items-center p-4 bg-gray-900 min-h-screen">
+    <div className="flex flex-col items-center p-4 bg-slate-900 min-h-screen">
       <div className="w-full max-w-md mb-4">
         <button
           onClick={handleBack}

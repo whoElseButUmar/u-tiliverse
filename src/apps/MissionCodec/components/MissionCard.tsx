@@ -21,7 +21,7 @@ export const MissionCard: React.FC<MissionCardProps> = ({
   endTime,
   commitLink,
 }) => (
-  <div className="w-96 h-144 bg-gray-800 border-4 border-green-500 rounded-xl shadow-xl overflow-hidden">
+  <div className="w-96 h-144 bg-slate-800 border-4 border-green-500 rounded-xl shadow-xl overflow-hidden">
     <div className="p-6 h-full flex flex-col justify-between">
       <div>
         <h3 className="text-3xl font-bold text-green-500 mb-2">
@@ -29,7 +29,7 @@ export const MissionCard: React.FC<MissionCardProps> = ({
         </h3>
         <p className="text-xl text-white mb-4">{missionTitle}</p>
       </div>
-      <div className="bg-gray-700 p-4 rounded-lg mb-4">
+      <div className="bg-slate-700 p-4 rounded-lg mb-4">
         <h4 className="text-green-500 font-bold mb-2">REASON:</h4>
         <p className="text-white text-sm">{reason}</p>
       </div>
