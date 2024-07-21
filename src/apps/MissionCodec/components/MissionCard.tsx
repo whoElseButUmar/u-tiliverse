@@ -21,11 +21,11 @@ export const MissionCard: React.FC<MissionCardProps> = ({
   endTime,
   commitLink,
 }) => (
-  <div className="w-96 min-h-96 h-auto bg-slate-800 border-4 gap-6 p-6 flex flex-col justify-between border-green-500 rounded-xl shadow-xl overflow-hidden">
+  <div className="w-96 min-h-96 h-auto bg-slate-800 border-4 gap-6 p-6 flex flex-col justify-between border-green-500 rounded-xl shadow-xl ">
     <div className=" h-full flex flex-col gap-6 ">
-      <div className="flex flex-col gap-3">
-        <h3 className="text-3xl font-bold text-green-500 ">
-          MISSION N {missionNumber}
+      <div className="flex flex-col gap-3 tracking-widest">
+        <h3 className="text-3xl font-bold text-green-500">
+          MISSION {missionNumber}
         </h3>
         <p className="text-xl text-white">{missionTitle}</p>
       </div>
@@ -44,15 +44,15 @@ export const MissionCard: React.FC<MissionCardProps> = ({
         <FaRegCheckCircle className="w-5 h-5 text-green-500 " />
         <span className="text-white">Ended: {endTime}</span>
       </div>
-      <div className="flex items-center gap-3">
-        <FaGithub className="w-5 h-5 text-green-500 " />
+      <div className="flex items-start gap-3 w-full">
+        <FaGithub className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
         <a
           href={commitLink}
-          className="text-blue-400 underline truncate"
+          className="text-blue-400 underline break-all"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Commit Link
+          {commitLink}
         </a>
       </div>
     </div>
