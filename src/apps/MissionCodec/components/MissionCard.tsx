@@ -48,11 +48,15 @@ export const MissionCard: React.FC<MissionCardProps> = ({
     <div className="flex flex-col gap-5">
       <div
         id="mission-card"
-        className="w-[40rem] min-h-96 h-auto bg-slate-800 border-4 gap-6 p-6 flex flex-col justify-between border-green-500 rounded-xl shadow-xl"
+        className="w-[40rem] min-h-96 h-auto bg-slate-800 border gap-6 p-6 flex flex-col justify-between border-green-100 rounded-xl shadow-xl"
+        style={{
+          boxShadow:
+            "0 0 8px rgba(34, 197, 94, 0.3), 0 0 8px rgba(34, 197, 94, 0.1) inset",
+        }}
       >
         <div className="h-full flex flex-col gap-6">
           <div className="flex flex-col gap-3 tracking-widest">
-            <h3 className="text-3xl font-bold text-green-500">
+            <h3 className="text-3xl font-black text-green-500">
               MISSION {missionNumber}
             </h3>
             <p className="text-xl text-white">{missionTitle}</p>
@@ -106,7 +110,7 @@ export const MissionCard: React.FC<MissionCardProps> = ({
           !brief ||
           !missionNumber
         }
-        className=" bg-green-500 flex items-center w-fit gap-3 self-end text-white px-4 py-2 rounded disabled:cursor-not-allowed disabled:opacity-70 "
+        className="bg-green-500 flex items-center w-fit gap-3 self-end text-white px-4 py-2 rounded disabled:cursor-not-allowed disabled:opacity-70 hover:bg-green-600 transition-colors duration-300"
         title="Download Card as PNG"
       >
         <FaDownload className="size-5" aria-hidden="true" />
