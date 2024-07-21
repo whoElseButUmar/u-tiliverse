@@ -104,7 +104,7 @@ export const LandingPage = ({ onAppSelect }: LandingPageProps) => {
         <div className="container mx-auto text-center">
           <p className="text-slate-300">
             &copy; {new Date().getFullYear()} uTiliverse. Made with{" "}
-            <span className="text-green-400">❤️</span> by{" "}
+            <span className="text-green-400">{`❤️`}</span> by{" "}
             <a
               href="https://github.com/whoElseButUmar"
               target="_blank"
