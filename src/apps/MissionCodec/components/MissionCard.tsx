@@ -21,38 +21,39 @@ export const MissionCard: React.FC<MissionCardProps> = ({
   endTime,
   commitLink,
 }) => (
-  <div className="w-96 h-144 bg-slate-800 border-4 border-green-500 rounded-xl shadow-xl overflow-hidden">
-    <div className="p-6 h-full flex flex-col justify-between">
-      <div>
-        <h3 className="text-3xl font-bold text-green-500 mb-2">
-          MISSION {missionNumber}
+  <div className="w-96 min-h-96 h-auto bg-slate-800 border-4 gap-6 p-6 flex flex-col justify-between border-green-500 rounded-xl shadow-xl overflow-hidden">
+    <div className=" h-full flex flex-col gap-6 ">
+      <div className="flex flex-col gap-3">
+        <h3 className="text-3xl font-bold text-green-500 ">
+          MISSION N {missionNumber}
         </h3>
-        <p className="text-xl text-white mb-4">{missionTitle}</p>
+        <p className="text-xl text-white">{missionTitle}</p>
       </div>
-      <div className="bg-slate-700 p-4 rounded-lg mb-4">
-        <h4 className="text-green-500 font-bold mb-2">REASON:</h4>
-        <p className="text-white text-sm">{reason}</p>
+      <div className="bg-slate-700 p-4 rounded-lg flex flex-col items-start">
+        <h4 className="text-green-500 font-bold ">REASON:</h4>
+        <p className="text-white text-base">{reason}</p>
       </div>
-      <div className="space-y-2">
-        <div className="flex items-center">
-          <FaRegClock className="w-5 h-5 text-green-500 mr-2" />
-          <span className="text-white">Started: {startTime}</span>
-        </div>
-        <div className="flex items-center">
-          <FaRegCheckCircle className="w-5 h-5 text-green-500 mr-2" />
-          <span className="text-white">Ended: {endTime}</span>
-        </div>
-        <div className="flex items-center">
-          <FaGithub className="w-5 h-5 text-green-500 mr-2" />
-          <a
-            href={commitLink}
-            className="text-blue-400 underline truncate"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Commit Link
-          </a>
-        </div>
+    </div>
+
+    <div className="flex flex-col items-start gap-3 ">
+      <div className="flex items-center gap-3">
+        <FaRegClock className="w-5 h-5 text-green-500 " />
+        <span className="text-white">Started: {startTime}</span>
+      </div>
+      <div className="flex items-center gap-3">
+        <FaRegCheckCircle className="w-5 h-5 text-green-500 " />
+        <span className="text-white">Ended: {endTime}</span>
+      </div>
+      <div className="flex items-center gap-3">
+        <FaGithub className="w-5 h-5 text-green-500 " />
+        <a
+          href={commitLink}
+          className="text-blue-400 underline truncate"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Commit Link
+        </a>
       </div>
     </div>
   </div>
