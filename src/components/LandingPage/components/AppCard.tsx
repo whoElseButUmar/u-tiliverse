@@ -13,7 +13,7 @@ type AppCardProps = {
 };
 function getAccentClasses(accentColor: string) {
   return {
-    borderColor: `border-l-${accentColor}-400`,
+    borderColor: `border-${accentColor}-400`,
   };
 }
 export const AppCard: React.FC<AppCardProps> = ({
