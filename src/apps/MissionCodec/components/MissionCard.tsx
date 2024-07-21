@@ -60,19 +60,29 @@ export const MissionCard: React.FC<MissionCardProps> = ({
         </div>
 
         <div className="flex flex-col items-start gap-3">
-          <div className="flex items-center gap-3">
-            <FaRegClock className="w-5 h-5 text-green-500" />
-            <span className="text-white">Started: {startTime}</span>
+          <div className="flex items-center gap-3 ">
+            <FaRegClock className="w-5 h-5 text-green-500 " />
+            <div className="flex items-center gap-1">
+              <span className="text-white font-bold">Started:</span>
+              <span className=" bg-slate-900 px-2 py-1 rounded-md">
+                {startTime}
+              </span>
+            </div>
           </div>
           <div className="flex items-center gap-3">
-            <FaRegCheckCircle className="w-5 h-5 text-green-500" />
-            <span className="text-white">Ended: {endTime}</span>
+            <FaRegCheckCircle className="w-5 h-5 text-green-500 " />
+            <div className="flex items-center gap-1">
+              <span className="text-white font-bold">Ended:</span>
+              <span className=" bg-slate-900 px-2 py-1 rounded-md">
+                {endTime}
+              </span>
+            </div>
           </div>
           <div className="flex items-start gap-3 w-full">
             <FaGithub className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
             <a
               href={commitLink}
-              className="text-blue-400 underline break-all"
+              className="text-blue-400 underline break-all bg-slate-900 px-2 py-1 rounded-md"
               target="_blank"
               rel="noopener noreferrer"
             >
