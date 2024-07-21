@@ -13,7 +13,7 @@ const MissionCodec: React.FC<MissionCodecProps> = ({ onBack }) => {
   const { formData, handleInputChange } = useMissionForm();
 
   return (
-    <div className="flex flex-col items-center p-6 gap-24 bg-slate-900 min-h-screen w-screen">
+    <div className="flex flex-col items-center p-6 gap-24 font-mono bg-slate-900 min-h-screen w-screen">
       <BackButton onBack={onBack} />
       <div className="w-full flex gap-12 items-start justify-center">
         <MissionForm
