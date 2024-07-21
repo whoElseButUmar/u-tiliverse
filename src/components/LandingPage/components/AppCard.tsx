@@ -1,30 +1,24 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { IoAlertCircleOutline } from "@react-icons/all-files/io5/IoAlertCircleOutline";
-import { cn } from "../../../lib/cn";
 
 type AppCardProps = {
   title: string;
   description: string;
   icon: React.ReactNode;
   onClick: () => void;
-  accentColor: string;
+  accentColor?: string;
   comingSoon?: boolean;
 };
-function getAccentClasses(accentColor: string) {
-  return {
-    borderColor: `border-${accentColor}-400`,
-  };
-}
+
 export const AppCard: React.FC<AppCardProps> = ({
   title,
   description,
   icon,
   onClick,
-  accentColor = "green",
+  accentColor = "red",
   comingSoon = false,
 }) => {
-  const { borderColor } = getAccentClasses(accentColor);
   return (
     <motion.div
       whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.2)" }}
@@ -33,10 +27,7 @@ export const AppCard: React.FC<AppCardProps> = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
       onClick={onClick}
-      className={cn(
-        `bg-slate-800 border-l-8 p-6 min-h-[9rem] rounded-lg shadow-lg cursor-pointer flex flex-col gap-3 group relative`,
-        borderColor.toString()
-      )}
+      className={`bg-slate-800 border-l-8 border-${accentColor}-400 p-6 min-h-[9rem] rounded-lg shadow-lg cursor-pointer flex flex-col gap-3 group relative`}
     >
       <motion.div
         className={`flex items-center gap-3 text-${accentColor}-400`}
