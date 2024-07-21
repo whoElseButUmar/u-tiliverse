@@ -23,6 +23,6 @@
         stroke="#00ff00" stroke-width="8" fill="none" stroke-linejoin="round" />
   
   <!-- Code symbol -->
-  <text x="82" y="115" font-family="monospace" font-size="30" fill="#00ff00">&lt;/&gt;</text>
+  <text x="74" y="115" font-family="monospace" font-size="30" fill="#00ff00">&lt;/&gt;</text>
   
 </svg>
