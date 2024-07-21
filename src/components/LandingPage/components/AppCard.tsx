@@ -11,7 +11,7 @@ export const AppCard = ({
   onClick,
 }: AppCardProps) => (
   <div
-    className="bg-slate-800 p-6 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer flex flex-col gap-3"
+    className="bg-slate-800 border-l-8 border-l-green-500 p-6 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer flex flex-col gap-3"
     onClick={onClick}
   >
     <div className="flex items-center gap-3">
