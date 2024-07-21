@@ -24,14 +24,18 @@ export const MissionCard: React.FC<MissionCardProps> = ({
 }) => {
   const downloadImage = () => {
     const node = document.getElementById("mission-card");
-
+    const currentDateFormatted = new Date().toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
     if (node) {
       htmlToImage
         .toPng(node)
         .then((dataUrl) => {
           const link = document.createElement("a");
           link.href = dataUrl;
-          link.download = "mission-card.png";
+          link.download = `mission-${missionNumber}-${missionTitle}-${startTime}-${endTime}-${currentDateFormatted}.png`;
           link.click();
         })
         .catch((error) => {
@@ -55,10 +59,11 @@ export const MissionCard: React.FC<MissionCardProps> = ({
           </div>
           <div className="bg-slate-700 p-4 rounded-lg flex flex-col items-start">
             <h4 className="text-green-500 font-bold">Brief:</h4>
-            <p className="text-white text-base break-all">{brief}</p>
+            <p className="text-white text-base break-all whitespace-pre-wrap">
+              {brief}
+            </p>
           </div>
         </div>
-
         <div className="flex flex-col items-start gap-3">
           <div className="flex items-center gap-3  h-9">
             <FaRegClock className="w-5 h-5 text-green-500 " />
@@ -93,9 +98,19 @@ export const MissionCard: React.FC<MissionCardProps> = ({
       </div>
       <button
         onClick={downloadImage}
-        className=" bg-green-500 flex items-center w-fit gap-3 self-end text-white px-4 py-2 rounded"
+        disabled={
+          !commitLink ||
+          !startTime ||
+          !endTime ||
+          !missionTitle ||
+          !brief ||
+          !missionNumber
+        }
+        className=" bg-green-500 flex items-center w-fit gap-3 self-end text-white px-4 py-2 rounded disabled:cursor-not-allowed disabled:opacity-70 "
+        title="Download Card as PNG"
       >
         <FaDownload className="size-5" aria-hidden="true" />
+        <span>Download as PNG</span>
       </button>
     </div>
   );
