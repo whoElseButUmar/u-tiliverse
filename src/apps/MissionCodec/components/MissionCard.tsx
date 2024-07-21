@@ -113,14 +113,7 @@ export const MissionCard: React.FC<MissionCardProps> = ({
       </motion.div>
       <button
         onClick={downloadImage}
-        disabled={
-          !commitLink ||
-          !startTime ||
-          !endTime ||
-          !missionTitle ||
-          !brief ||
-          !missionNumber
-        }
+        disabled={!missionTitle || !brief || !missionNumber}
         className="bg-green-500 flex items-center w-fit gap-3 self-end text-white px-4 py-2 rounded-full disabled:cursor-not-allowed disabled:opacity-70 hover:bg-green-600 transition-all ease-in-out duration-300 hover:scale-105 disabled:scale-100 disabled:hover:bg-green-500"
         title="Download Card as PNG"
       >
