@@ -12,7 +12,7 @@
 
 </div>
 
-**[Demo](https://u-tiliverse.vercel.app/)**
+**[Demo](https://utiliverse.vercel.app/)**
 
 
 ## 🚀 Features
