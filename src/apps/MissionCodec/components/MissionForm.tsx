@@ -34,7 +34,7 @@ export const MissionForm: React.FC<MissionFormProps> = ({
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-2xl font-bold text-center text-green-400"
+        className="text-2xl font-bold text-center text-green-400 mb-2"
       >
         Mission Codec Card Maker
       </motion.h2>
@@ -45,9 +45,20 @@ export const MissionForm: React.FC<MissionFormProps> = ({
           initial="hidden"
           animate="visible"
           transition={{ delay: index * 0.2 }}
+          className="flex flex-col gap-1"
         >
+          <motion.label
+            htmlFor={key}
+            className="text-sm font-medium text-green-400 mb-1"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: index * 0.2 + 0.1 }}
+          >
+            {getLabelText(key)}
+          </motion.label>
           {key === "brief" || key === "commitLink" ? (
             <textarea
+              id={key}
               className="w-full p-3 border border-slate-600 rounded-md bg-slate-700 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-300"
               placeholder={getPlaceholder(key)}
               name={key}
@@ -57,6 +68,7 @@ export const MissionForm: React.FC<MissionFormProps> = ({
             />
           ) : (
             <input
+              id={key}
               className="w-full p-3 border border-slate-600 rounded-md bg-slate-700 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-300"
               placeholder={getPlaceholder(key)}
               name={key}
@@ -73,12 +85,24 @@ export const MissionForm: React.FC<MissionFormProps> = ({
 
 const getPlaceholder = (key: string): string => {
   const placeholders: { [key: string]: string } = {
+    missionNumber: "e.g., 001",
+    missionTitle: "Enter mission title",
+    brief: "Describe your mission briefly",
+    startTime: "HH:MM",
+    endTime: "HH:MM",
+    commitLink: "Paste your GitHub commit link",
+  };
+  return placeholders[key] || key.charAt(0).toUpperCase() + key.slice(1);
+};
+
+const getLabelText = (key: string): string => {
+  const labels: { [key: string]: string } = {
     missionNumber: "Mission Number",
     missionTitle: "Mission Title",
-    brief: "Brief description of the mission",
+    brief: "Mission Brief",
     startTime: "Start Time",
     endTime: "End Time",
     commitLink: "GitHub Commit Link",
   };
-  return placeholders[key] || key.charAt(0).toUpperCase() + key.slice(1);
+  return labels[key] || key.charAt(0).toUpperCase() + key.slice(1);
 };
