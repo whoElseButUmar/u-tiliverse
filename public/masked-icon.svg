@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <!-- Outer circle -->
+    <circle cx="100" cy="100" r="98" fill="none" stroke="black" stroke-width="4"/>
+    
+    <!-- Inner circle -->
+    <circle cx="100" cy="100" r="70" fill="none" stroke="black" stroke-width="2"/>
+    
+    <!-- Stylized 'U' shape -->
+    <path d="M60 70 L60 130 Q100 160 140 130 L140 70" 
+          stroke="black" stroke-width="8" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    
+    <!-- Code symbol -->
+    <text x="74" y="115" font-family="monospace" font-size="30" fill="black">&lt;/&gt;</text>
+  </svg>
