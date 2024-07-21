@@ -65,7 +65,17 @@ export const LandingPage = ({ onAppSelect }: LandingPageProps) => {
 
       <footer className="bg-slate-800 py-6">
         <div className="grow text-center">
-          <p>&copy; 2024 u-tiliverse. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} uTiliverse. Made with{" "}
+            <span className="text-green-500">❤️</span> by{" "}
+            <a
+              href="https://github.com/whoElseButUmar"
+              target="_blank"
+              className="text-green-500 hover:underline underline-offset-4 hover:text-green-400"
+            >
+              WhoElseButUmar
+            </a>
+          </p>
         </div>
       </footer>
     </div>
@@ -84,5 +94,4 @@ const apps: Array<{
     icon: <IoIosCode className="w-8 h-8 text-green-500" aria-hidden="true" />,
     id: "missioncodec",
   },
-  // Add more apps here as needed
 ];
