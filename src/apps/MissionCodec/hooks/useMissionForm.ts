@@ -3,7 +3,7 @@ import { useState } from "react";
 interface MissionFormData {
   missionNumber: string;
   missionTitle: string;
-  reason: string;
+  brief: string;
   startTime: string;
   endTime: string;
   commitLink: string;
@@ -13,7 +13,7 @@ export const useMissionForm = () => {
   const [formData, setFormData] = useState<MissionFormData>({
     missionNumber: "",
     missionTitle: "",
-    reason: "",
+    brief: "",
     startTime: "",
     endTime: "",
     commitLink: "",

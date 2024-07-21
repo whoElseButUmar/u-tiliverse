@@ -4,7 +4,7 @@ interface MissionFormProps {
   formData: {
     missionNumber: string;
     missionTitle: string;
-    reason: string;
+    brief: string;
     startTime: string;
     endTime: string;
     commitLink: string;
@@ -38,9 +38,9 @@ export const MissionForm: React.FC<MissionFormProps> = ({
     />
     <textarea
       className="w-full p-2  border rounded bg-slate-700 text-white"
-      placeholder="Reason"
-      name="reason"
-      value={formData.reason}
+      placeholder="Brief"
+      name="brief"
+      value={formData.brief}
       onChange={handleInputChange}
       rows={3}
     />

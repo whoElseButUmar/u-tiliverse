@@ -7,7 +7,7 @@ import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 interface MissionCardProps {
   missionNumber: string;
   missionTitle: string;
-  reason: string;
+  brief: string;
   startTime: string;
   endTime: string;
   commitLink: string;
@@ -16,7 +16,7 @@ interface MissionCardProps {
 export const MissionCard: React.FC<MissionCardProps> = ({
   missionNumber,
   missionTitle,
-  reason,
+  brief,
   startTime,
   endTime,
   commitLink,
@@ -30,8 +30,8 @@ export const MissionCard: React.FC<MissionCardProps> = ({
         <p className="text-xl text-white">{missionTitle}</p>
       </div>
       <div className="bg-slate-700 p-4 rounded-lg flex flex-col items-start">
-        <h4 className="text-green-500 font-bold ">REASON:</h4>
-        <p className="text-white text-base">{reason}</p>
+        <h4 className="text-green-500 font-bold ">Brief:</h4>
+        <p className="text-white text-base">{brief}</p>
       </div>
     </div>
 
