@@ -86,7 +86,7 @@ export const MissionCard: React.FC<MissionCardProps> = ({
             transition={{ delay: 0.4 }}
           >
             <h4 className="text-green-400 font-bold">Brief:</h4>
-            <p className="text-white text-base break-all whitespace-pre-wrap">
+            <p className="text-white text-base break-all font-mono whitespace-pre-wrap">
               {brief}
             </p>
           </motion.div>
@@ -111,7 +111,7 @@ export const MissionCard: React.FC<MissionCardProps> = ({
           />
         </motion.div>
       </motion.div>
-      <motion.button
+      <button
         onClick={downloadImage}
         disabled={
           !commitLink ||
@@ -121,14 +121,12 @@ export const MissionCard: React.FC<MissionCardProps> = ({
           !brief ||
           !missionNumber
         }
-        className="bg-green-500 flex items-center w-fit gap-3 self-end text-white px-4 py-2 rounded-full disabled:cursor-not-allowed disabled:opacity-70 hover:bg-green-600 transition-colors duration-300"
+        className="bg-green-500 flex items-center w-fit gap-3 self-end text-white px-4 py-2 rounded-full disabled:cursor-not-allowed disabled:opacity-70 hover:bg-green-600 transition-all ease-in-out duration-300 hover:scale-105 disabled:scale-100 disabled:hover:bg-green-500"
         title="Download Card as PNG"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
       >
         <FaDownload className="size-5" aria-hidden="true" />
         <span>Download as PNG</span>
-      </motion.button>
+      </button>
     </motion.div>
   );
 };
@@ -146,14 +144,14 @@ const InfoItem: React.FC<{
       {isLink ? (
         <a
           href={value}
-          className="text-blue-400 underline break-all bg-slate-900 px-2 py-1 rounded-md hover:text-blue-300 transition-colors duration-300"
+          className="text-blue-400 underline break-all font-mono bg-slate-900 px-2 py-1 rounded-md hover:text-blue-300 transition-colors duration-300"
           target="_blank"
           rel="noopener noreferrer"
         >
           {value || "TBA"}
         </a>
       ) : (
-        <span className="bg-slate-900 px-2 py-1 rounded-md">
+        <span className="bg-slate-900 px-2 py-1 font-mono rounded-md">
           {value || "TBA"}
         </span>
       )}
