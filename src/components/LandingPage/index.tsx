@@ -81,7 +81,8 @@ export const LandingPage = ({ onAppSelect }: LandingPageProps) => {
                 description={app.description}
                 icon={app.icon}
                 onClick={() => onAppSelect(app.id)}
-                accentColor={app.accentColor}
+                borderColor={app.borderColor}
+                textColor={app.textColor}
                 comingSoon={app.comingSoon}
               />
             </motion.div>
@@ -124,7 +125,8 @@ const apps: Array<{
   title: string;
   description: string;
   icon: React.ReactNode;
-  accentColor: string;
+  textColor: string;
+  borderColor: string;
   id: AppId;
   comingSoon?: boolean;
 }> = [
@@ -133,14 +135,16 @@ const apps: Array<{
     description: "Create dev mission cards to log your progress with ease",
     icon: <IoIosCode className="w-8 h-8" aria-hidden="true" />,
     id: "missioncodec",
-    accentColor: "green",
+    textColor: "text-green-400",
+    borderColor: "border-green-400",
   },
   {
     title: "New Utility",
     description: "Exciting new feature coming to uTiliverse soon!",
     icon: <MdInfoOutline className="w-8 h-8" aria-hidden="true" />,
     id: "newUtility",
-    accentColor: "yellow",
+    textColor: "text-yellow-400",
+    borderColor: "border-yellow-400",
     comingSoon: true,
   },
 ];

@@ -7,7 +7,8 @@ type AppCardProps = {
   description: string;
   icon: React.ReactNode;
   onClick: () => void;
-  accentColor?: string;
+  borderColor: string;
+  textColor: string;
   comingSoon?: boolean;
 };
 
@@ -16,7 +17,8 @@ export const AppCard: React.FC<AppCardProps> = ({
   description,
   icon,
   onClick,
-  accentColor = "red",
+  borderColor,
+  textColor,
   comingSoon = false,
 }) => {
   return (
@@ -27,10 +29,10 @@ export const AppCard: React.FC<AppCardProps> = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
       onClick={onClick}
-      className={`bg-slate-800 border-l-8 border-${accentColor}-400 p-6 min-h-[9rem] rounded-lg shadow-lg cursor-pointer flex flex-col gap-3 group relative`}
+      className={`bg-slate-800 border-l-8 ${borderColor} p-6 min-h-[9rem] rounded-lg shadow-lg cursor-pointer flex flex-col gap-3 group relative`}
     >
       <motion.div
-        className={`flex items-center gap-3 text-${accentColor}-400`}
+        className={`flex items-center gap-3 `}
         initial={{ x: -20, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ delay: 0.1 }}
@@ -38,7 +40,7 @@ export const AppCard: React.FC<AppCardProps> = ({
         <motion.div
           whileHover={{ rotate: 360 }}
           transition={{ duration: 0.5 }}
-          className={`transition-colors duration-300`}
+          className={`transition-colors duration-300 ${textColor}`}
         >
           {icon}
         </motion.div>
