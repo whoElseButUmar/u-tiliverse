@@ -4,7 +4,7 @@ import { useMissionForm } from "./hooks/useMissionForm";
 import { MissionForm } from "./components/MissionForm";
 import { MissionCard } from "./components/MissionCard";
 import { AppId } from "../../types/app";
-import { BackButton } from "../utils/BackButton";
+import { BackButton } from "../../lib/BackButton";
 
 interface MissionCodecProps {
   onBack: (returnTo: AppId | null) => void;

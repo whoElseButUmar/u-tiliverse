@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { IoIosCode } from "@react-icons/all-files/io/IoIosCode";
 import { MdInfoOutline } from "@react-icons/all-files/md/MdInfoOutline";
 import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
+import { IoIosDocument } from "@react-icons/all-files/io/IoIosDocument";
 import { AppId } from "../../types/app";
 import { AppCard } from "./components/AppCard";
 import { motion } from "framer-motion";
@@ -137,6 +138,14 @@ const apps: Array<{
     id: "missioncodec",
     textColor: "text-green-400",
     borderColor: "border-green-400",
+  },
+  {
+    title: "NoteCodec",
+    description: "Create notes with ease",
+    icon: <IoIosDocument className="w-8 h-8" aria-hidden="true" />,
+    id: "notecodec",
+    textColor: "text-yellow-400",
+    borderColor: "border-yellow-400",
   },
   {
     title: "New Utility",

@@ -1,1 +1,1 @@
-export type AppId = "missioncodec" | "newUtility";
+export type AppId = "missioncodec" | "notecodec" | "newUtility";
