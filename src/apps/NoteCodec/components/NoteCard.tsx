@@ -37,6 +37,12 @@ export const NoteCard: React.FC<NoteCardProps> = ({
     }
   };
 
+  // Split tags into an array
+  const tagArray = tags
+    .split(",")
+    .map((tag) => tag.trim())
+    .filter((tag) => tag !== "");
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -67,24 +73,23 @@ export const NoteCard: React.FC<NoteCardProps> = ({
             <h3 className="text-3xl font-black text-blue-400">{title}</h3>
           </motion.div>
           <motion.div
-            className="bg-blue-700/50 p-4 rounded-lg flex flex-col items-start"
+            className="bg-blue-600/50 p-4 rounded-lg flex flex-col items-start"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
           >
-            <h4 className="text-blue-400 font-bold">Content:</h4>
-            <p className="text-white text-base break-words font-mono whitespace-pre-wrap">
+            <p className="text-white min-h-40 text-base break-words font-mono whitespace-pre-wrap">
               {content}
             </p>
           </motion.div>
         </div>
         <motion.div
-          className="flex flex-col items-start gap-3"
+          className="flex flex-col items-start gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          <InfoItem icon={<FaTags />} label="Tags:" value={tags} />
+          <InfoItem icon={<FaTags />} label="Tags:" value={tagArray} />
           <InfoItem
             icon={<FaRegClock />}
             label="Created:"
@@ -108,15 +113,30 @@ export const NoteCard: React.FC<NoteCardProps> = ({
 const InfoItem: React.FC<{
   icon: React.ReactNode;
   label: string;
-  value: string;
+  value: string | string[];
 }> = ({ icon, label, value }) => (
-  <div className="flex items-center gap-3 h-9">
-    <span className="text-blue-400">{icon}</span>
-    <div className="flex items-center gap-1">
-      <span className="text-white font-bold">{label}</span>
-      <span className="bg-blue-900 px-2 py-1 font-mono rounded-md">
-        {value || "N/A"}
+  <div className="flex items-start gap-3">
+    <div className="flex items-start gap-2">
+      <span className="text-white flex items-center gap-2 font-bold">
+        <span className="text-blue-400">{icon}</span>
+        {label}
       </span>
+      {Array.isArray(value) ? (
+        <div className="flex flex-wrap gap-2">
+          {value.map((item, index) => (
+            <span
+              key={index}
+              className="bg-blue-900 px-2 py-1 font-mono rounded-md"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+      ) : (
+        <span className="bg-blue-900 px-2 py-1 font-mono rounded-md">
+          {value || "N/A"}
+        </span>
+      )}
     </div>
   </div>
 );

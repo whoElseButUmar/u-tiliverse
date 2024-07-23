@@ -9,8 +9,8 @@ interface NotesFormData {
 
 export const useNoteForm = () => {
   const [formData, setFormData] = useState<NotesFormData>({
-    title: "",
-    content: "",
+    title: "Note Title",
+    content: "Note Content",
     tags: "",
     createdAt: "",
   });
