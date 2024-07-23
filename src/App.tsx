@@ -6,6 +6,19 @@ import { AppId } from "./types/app";
 import UnderDevelopment from "./components/UnderDevelopment";
 import NoteCodec from "./apps/NoteCodec";
 
+const InstallButton = ({ onClick }: { onClick: () => void }) => {
+  return (
+    <div className="hover:scale-105 transition-all duration-200 ease-in-out">
+      <button
+        onClick={onClick}
+        className="relative z-10 bg-blue-500 text-white px-5 py-2 rounded-md shadow-md font-semibold text-base overflow-hidden"
+      >
+        <span className="relative z-10">Install App</span>
+      </button>
+    </div>
+  );
+};
+
 const App: React.FC = () => {
   const [currentApp, setCurrentApp] = useState<AppId | null>(null);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
@@ -54,16 +67,9 @@ const App: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="fixed bottom-4 right-4 z-50"
+          className="fixed bottom-6 right-6 z-50"
         >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={handleInstallClick}
-            className="bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300"
-          >
-            Install App
-          </motion.button>
+          <InstallButton onClick={handleInstallClick} />
         </motion.div>
       )}
     </div>
