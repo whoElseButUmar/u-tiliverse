@@ -144,8 +144,8 @@ const apps: Array<{
     description: "Create notes with ease",
     icon: <IoIosDocument className="w-8 h-8" aria-hidden="true" />,
     id: "notecodec",
-    textColor: "text-yellow-400",
-    borderColor: "border-yellow-400",
+    textColor: "text-blue-400",
+    borderColor: "border-blue-400",
   },
   {
     title: "New Utility",
