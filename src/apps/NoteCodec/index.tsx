@@ -1,17 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useMissionForm } from "./hooks/useMissionForm";
-import { MissionForm } from "./components/MissionForm";
-import { MissionCard } from "./components/MissionCard";
+import { useNoteForm } from "./hooks/useNoteForm";
+import { NoteForm } from "./components/NoteForm";
+import { NoteCard } from "./components/NoteCard";
 import { AppId } from "../../types/app";
 import { BackButton } from "../../lib/BackButton";
 
-interface MissionCodecProps {
+interface NotesCodecProps {
   onBack: (returnTo: AppId | null) => void;
 }
 
-const MissionCodec: React.FC<MissionCodecProps> = ({ onBack }) => {
-  const { formData, handleInputChange } = useMissionForm();
+const NoteCodec: React.FC<NotesCodecProps> = ({ onBack }) => {
+  const { formData, handleInputChange } = useNoteForm();
 
   return (
     <motion.div
@@ -35,10 +35,7 @@ const MissionCodec: React.FC<MissionCodecProps> = ({ onBack }) => {
           transition={{ delay: 0.2 }}
           className="w-full md:w-auto"
         >
-          <MissionForm
-            formData={formData}
-            handleInputChange={handleInputChange}
-          />
+          <NoteForm formData={formData} handleInputChange={handleInputChange} />
         </motion.div>
 
         <motion.div
@@ -47,11 +44,11 @@ const MissionCodec: React.FC<MissionCodecProps> = ({ onBack }) => {
           transition={{ delay: 0.3 }}
           className="w-full md:w-auto"
         >
-          <MissionCard {...formData} />
+          <NoteCard {...formData} />
         </motion.div>
       </div>
     </motion.div>
   );
 };
 
-export default MissionCodec;
+export default NoteCodec;

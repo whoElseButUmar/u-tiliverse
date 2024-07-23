@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import * as htmlToImage from "html-to-image";
 import { FaRegClock } from "@react-icons/all-files/fa/FaRegClock";
 import { FaRegCheckCircle } from "@react-icons/all-files/fa/FaRegCheckCircle";
-import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaDownload } from "@react-icons/all-files/fa/FaDownload";
 
 interface MissionCardProps {
@@ -12,7 +11,6 @@ interface MissionCardProps {
   brief: string;
   startTime: string;
   endTime: string;
-  commitLink: string;
 }
 
 export const MissionCard: React.FC<MissionCardProps> = ({
@@ -21,7 +19,6 @@ export const MissionCard: React.FC<MissionCardProps> = ({
   brief,
   startTime,
   endTime,
-  commitLink,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -86,7 +83,7 @@ export const MissionCard: React.FC<MissionCardProps> = ({
             transition={{ delay: 0.4 }}
           >
             <h4 className="text-green-400 font-bold">Brief:</h4>
-            <p className="text-white text-base break-all font-mono whitespace-pre-wrap">
+            <p className="text-white min-h-40 text-base break-all font-mono whitespace-pre-wrap">
               {brief}
             </p>
           </motion.div>
@@ -102,12 +99,6 @@ export const MissionCard: React.FC<MissionCardProps> = ({
             icon={<FaRegCheckCircle />}
             label="Ended:"
             value={endTime}
-          />
-          <InfoItem
-            icon={<FaGithub />}
-            label="Commit:"
-            value={commitLink}
-            isLink
           />
         </motion.div>
       </motion.div>
@@ -128,26 +119,16 @@ const InfoItem: React.FC<{
   icon: React.ReactNode;
   label: string;
   value: string;
-  isLink?: boolean;
-}> = ({ icon, label, value, isLink = false }) => (
-  <div className="flex items-center gap-3 h-9">
-    <span className="text-green-400">{icon}</span>
-    <div className="flex items-center gap-1">
-      <span className="text-white font-bold">{label}</span>
-      {isLink ? (
-        <a
-          href={value}
-          className="text-blue-400 underline break-all font-mono bg-slate-900 px-2 py-1 rounded-md hover:text-blue-300 transition-colors duration-300"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {value || "TBA"}
-        </a>
-      ) : (
-        <span className="bg-slate-900 px-2 py-1 font-mono rounded-md">
-          {value || "TBA"}
-        </span>
-      )}
+}> = ({ icon, label, value = false }) => (
+  <div className="flex items-start gap-3 ">
+    <div className="flex items-start gap-2">
+      <span className="text-white flex items-center gap-2 font-bold">
+        <span className="text-green-400">{icon}</span>
+        {label}
+      </span>
+      <span className="bg-slate-900 px-2 py-1 font-mono rounded-md">
+        {value || "N/A"}
+      </span>
     </div>
   </div>
 );

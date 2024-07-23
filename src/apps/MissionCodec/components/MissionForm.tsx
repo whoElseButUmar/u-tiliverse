@@ -8,7 +8,6 @@ interface MissionFormProps {
     brief: string;
     startTime: string;
     endTime: string;
-    commitLink: string;
   };
   handleInputChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -56,7 +55,7 @@ export const MissionForm: React.FC<MissionFormProps> = ({
           >
             {getLabelText(key)}
           </motion.label>
-          {key === "brief" || key === "commitLink" ? (
+          {key === "brief" ? (
             <textarea
               id={key}
               className="w-full p-3 border border-slate-600 rounded-md bg-slate-700 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-300"
@@ -90,7 +89,6 @@ const getPlaceholder = (key: string): string => {
     brief: "Describe your mission briefly",
     startTime: "HH:MM",
     endTime: "HH:MM",
-    commitLink: "Paste your GitHub commit link",
   };
   return placeholders[key] || key.charAt(0).toUpperCase() + key.slice(1);
 };
@@ -102,7 +100,6 @@ const getLabelText = (key: string): string => {
     brief: "Mission Brief",
     startTime: "Start Time",
     endTime: "End Time",
-    commitLink: "GitHub Commit Link",
   };
   return labels[key] || key.charAt(0).toUpperCase() + key.slice(1);
 };

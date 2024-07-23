@@ -6,7 +6,6 @@ interface MissionFormData {
   brief: string;
   startTime: string;
   endTime: string;
-  commitLink: string;
 }
 
 export const useMissionForm = () => {
@@ -16,7 +15,6 @@ export const useMissionForm = () => {
     brief: "",
     startTime: "",
     endTime: "",
-    commitLink: "",
   });
 
   const handleInputChange = (

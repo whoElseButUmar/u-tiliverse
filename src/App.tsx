@@ -4,6 +4,7 @@ import { LandingPage } from "./components/LandingPage";
 import MissionCodec from "./apps/MissionCodec";
 import { AppId } from "./types/app";
 import UnderDevelopment from "./components/UnderDevelopment";
+import NoteCodec from "./apps/NoteCodec";
 
 const App: React.FC = () => {
   const [currentApp, setCurrentApp] = useState<AppId | null>(null);
@@ -42,6 +43,8 @@ const App: React.FC = () => {
         <LandingPage onAppSelect={handleNavigate} />
       ) : currentApp === "missioncodec" ? (
         <MissionCodec onBack={handleNavigate} />
+      ) : currentApp === "notecodec" ? (
+        <NoteCodec onBack={handleNavigate} />
       ) : (
         <UnderDevelopment appName={currentApp} onBack={handleNavigate} />
       )}
